@@ -19,7 +19,7 @@ To address these challenges, I want to build an user-friendly immigration and vi
 
 My platform offers a *clear, step-by-step process* for users to independently navigate visa applications, reducing the risk of mistakes and increasing the chances of approval.
 
-### Day-By-Day Plan:-
+### Day-by-Day Plan:-
 - *Day1 :-* Set Up Project Repository
 - *Day2:-* Low Fidelity Design
 - *Day3:-* Backend Setup (Express and GET API)
