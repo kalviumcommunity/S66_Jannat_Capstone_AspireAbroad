@@ -1,9 +1,9 @@
 # AspireAbroad
 ## Problem Statement:-
 
-The immigration and visa application process is frequently difficult and time-consuming, and applicants frequently struggle to comprehend the different eligibility requirements, application procedures, and visa requirements in various nations. This results in misunderstandings, missed deadlines, and occasionally denied visas.
+The immigration and visa application process is frequently difficult and time-consuming, and applicants frequently struggle to comprehend the different eligibility requirements, application procedures, and visa requirements in various nations. This leads to misunderstandings and missed deadlines. In some cases, it may also result in visa denials.
 
-Furthermore, a lot of applicants turn to agents for help, but frequently these agents don't give clear instructions and proper guidance  which results in errors, wasted money, and eventually visa rejections. Because they lack a clear path through this complex process, applicants are more likely to be rejected.
+Furthermore, a lot of applicants seek assistance from agents, but frequently these agents don't give clear instructions and proper guidance  which results in errors, wasted money, and eventually visa rejections. Because they lack a clear path through this complex process, applicants are more likely to be rejected.
 
 For those seeking to move to countries like **Canada**, **Australia**, the **UK**, and the **USA**, navigating multiple visa types—such as **tourist**, **work**, **permanent residence**, and **study visas** becomes an overwhelming task.
 
