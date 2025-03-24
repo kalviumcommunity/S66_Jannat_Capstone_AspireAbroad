@@ -5,7 +5,28 @@ meta {
 }
 
 post {
-  url: 
-  body: none
+  url: http://localhost:0710/Canada/visa
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "visaType":"Tourist",
+    "visaCategory": "Visitor Visa (Tourist Stream)",
+    "stay": "Up to 6 months",
+    "cost": "CAD $100 (Visa Fee) + CAD $85 (Biometrics, if applicable)",
+    "about": "This visa allows you to visit Canada temporarily for tourism, visiting family or friends, or other short-term purposes.",
+    "eligibility": [
+      "Have a valid passport",
+      "Be in good health (medical exam may be required)",
+      "Have no criminal or immigration-related convictions",
+      "Show proof of sufficient funds for your stay",
+      "Provide a travel itinerary and purpose of visit",
+      "Have strong ties to your home country (job, assets, family) to ensure return",
+      "Convince the immigration officer that you will leave Canada at the end of your visit",
+      "Provide an invitation letter from family or friends (if applicable)"
+    ]
+  }
+  
 }
