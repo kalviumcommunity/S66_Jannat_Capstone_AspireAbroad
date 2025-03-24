@@ -2,13 +2,10 @@ const User=require('../models/user.model')
 const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
 const dotenv=require('dotenv')
-dotenv.config({ path: '../config/env' });
+dotenv.config({ path: '../config/.env' });
 const enroll=async(req,res)=>{
     try{
         const { firstname, lastname, email, phonenumber, countryresidence, destination, visaType, password, termsAccepted } = req.body;
-        // if (!firstname || !email || !phonenumber || !countryresidence || !destination || !visaType || !password){
-        //     res.statue(400).json({message:"Missing required Fields"})
-        // }
         if (!termsAccepted) {
             return res.status(400).json({ message: "You must agree to the terms and conditions" });
         }
@@ -39,31 +36,32 @@ const enroll=async(req,res)=>{
       }
 }
 
-const login=async(req,res)=>{
-    try{
-        const {firstname, lastname,email,password}=req.body
-        const found= await User.findOne({email})
-        if(!found){
-            return res.status(400).json({message:"Email doesn't exist, SignUp first"})
+const login = async (req, res) => {
+    try {
+        const { firstname,lastname,email, password } = req.body;
+        const found = await User.findOne({ email });
+        if (!found) {
+            return res.status(400).json({ message: "Email doesn't exist, SignUp first" });
         }
-        const isMatch=await bcrypt.compare(password,found.password);
-        if(!isMatch){
-            return res.status(400).json({message:"Invalid password"}) 
+        const isMatch = await bcrypt.compare(password, found.password);
+        if (!isMatch) {
+            return res.status(400).json({ message: "Invalid password" });
         }
-        const token=jwt.sign(
-            {userID: found._id, email: found.email}, process.env.JWT_SECRET, { expiresIn: '7d' }
-        )
-        
+        const token = jwt.sign(
+            { userID: found._id, email: found.email },
+            process.env.JWT_SECRET,
+            { expiresIn: '7d' }
+        );
+
         res.status(200).json({
-            message:"Login successfull",
+            message: "Login successful",
             user: { id: found._id, email: found.email },
-            token:token,
-            user:found
+            token: token
         });
-        
-    }catch (error) {
-        console.error("Error during login:", error);  
-        return res.status(500).json({ error: error.message || "Something went wrong." }); 
+    } catch (error) {
+        console.error("Error during login:", error);
+        return res.status(500).json({ error: error.message || "Something went wrong." });
     }
 }
+
 module.exports={enroll,login}
