@@ -1,0 +1,30 @@
+meta {
+  name: POST2
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:0710/Australia/visa
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "visaType": "Tourist",
+    "visaCategory": "Business visitor stream",
+    "stay": "Up to 3 months",
+    "cost": "From AUD195.00",
+    "about": "This visa stream lets you visit Australia for business reasons. With this visa, you can attend meetings, conferences, or explore business opportunities.",
+    "eligibility": [
+      "Meet our health requirement",
+      "Meet our character requirement",
+      "Pay your debts to the Australian government",
+      "Be a genuine visitor travelling to Australia for business visitor activities",
+      "Have enough money",
+      "Be outside Australia when you apply and when we decide your application"
+    ]
+  }
+  
+}

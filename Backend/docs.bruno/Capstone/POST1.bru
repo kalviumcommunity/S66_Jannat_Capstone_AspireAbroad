@@ -1,0 +1,29 @@
+meta {
+  name: POST1
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:0710/Australia/visa
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "visaType": "Tourist",
+    "visaCategory": "Tourist stream",
+    "stay": "Up to 12 months",
+    "cost": "From AUD195.00",
+    "about": "This visa stream lets you visit Australia as a tourist, to go on a cruise, or visit family and friends.",
+    "eligibility": [
+      "Meet our health requirement",
+      "Meet our character requirement",
+      "Pay your debts to the Australian government",
+      "You must be outside Australia when you apply and when we decide your visa application",
+      "Have enough money"
+    ]
+  }
+  
+}

@@ -1,0 +1,39 @@
+meta {
+  name: POST4
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:0710/Australia/visa
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "visaType": "Work",
+    "visaCategory": "Core Skills stream",
+    "stay": "Up to 4 years. Hong Kong passport holders may stay up to 5 years.",
+    "cost": "From AUD3,115.00",
+    "about": "This visa enables employers to address labour shortages by bringing in skilled workers when no suitable Australian worker is available.",
+    "eligibility": [
+      "Be the holder of an appropriate visa",
+      "Have complied with previous visa conditions",
+      "Be nominated by an approved sponsor",
+      "Work for your nominating employer",
+      "Have relevant skills, qualifications and employment background to perform the job",
+      "Have worked in your nominated occupation or a related field for at least the required period",
+      "Have a positive skills assessment",
+      "Have health insurance",
+      "Meet our health requirement",
+      "Meet our character requirement",
+      "Have not contravened ‘paying for visa sponsorship’ legislative provisions",
+      "Overall band score of at least 5.0 with a score of at least 4.5 in each component of the IELTS test",
+      "Not have had a visa cancelled or a previous application refused",
+      "Have no debt to the Australian government",
+      "Sign the Australian values statement"
+    ]
+  }
+  
+}
