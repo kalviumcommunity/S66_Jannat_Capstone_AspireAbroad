@@ -1,0 +1,34 @@
+meta {
+  name: POST5
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:0710/Australia/visa
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "visaType": "Work",
+    "visaCategory": "Government Agreement stream",
+    "stay": "This is a temporary visa. You can stay for the time we specify in your agreement.",
+    "cost": "The visa costs AUD365.00 for the main applicant.",
+    "about": "This visa stream allows a person to work in Australia under the terms and conditions of a bilateral agreement between the Australian government and another country.",
+    "eligibility": [
+      "Be engaged under the terms and conditions of a bilateral agreement",
+      "Be the holder of an appropriate visa",
+      "Have the support of the signatories to the agreement",
+      "Be able to support yourself and any dependants",
+      "Genuine temporary stay requirement",
+      "If you owe the Australian Government money, you must have paid it back",
+      "We will consider your immigration history when we make a decision on your application",
+      "Have health insurance",
+      "Meet our health requirement",
+      "Meet our character requirement"
+    ]
+  }
+  
+}

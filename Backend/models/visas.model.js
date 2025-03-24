@@ -12,7 +12,7 @@ const VisaSchema = new mongoose.Schema({
 
 const countries = ['Australia', 'Canada', 'UK', 'USA'];
 const models = countries.reduce((acc, country) => {
-  acc[`Tourist${country}`] = mongoose.model(`Visa${country}`, VisaSchema, country.toLowerCase());
+  acc[`Visa${country}`] = mongoose.model(`Visa${country}`, VisaSchema, country.toLowerCase());
   return acc;
 }, {});
 

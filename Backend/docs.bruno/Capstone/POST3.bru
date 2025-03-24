@@ -1,0 +1,30 @@
+meta {
+  name: POST3
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:0710/Australia/visa
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "visaType": "Tourist",
+    "visaCategory": "Frequent traveller stream",
+    "stay": "Up to 12 months",
+    "cost": "From AUD1,065.00",
+    "about": "This visa stream is for frequent travelers to Australia. It allows multiple entries for tourism or business visitor activities over a long period.",
+    "eligibility": [
+      "Meet our health requirement",
+      "Meet our character requirement",
+      "Pay your debts to the Australian government",
+      "Be a genuine visitor who frequently travels to Australia",
+      "Have enough money",
+      "Be outside Australia when you apply and when we decide your application"
+    ]
+  }
+  
+}
