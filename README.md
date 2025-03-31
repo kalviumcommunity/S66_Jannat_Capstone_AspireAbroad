@@ -1,23 +1,27 @@
 # AspireAbroad
-## Problem Statement:-
+## Project Overview
+AspireAbroad is a comprehensive, user-centric platform designed to simplify the immigration and visa application process for individuals aspiring to move to countries like **Canada**, **Australia**, the **UK**, and the **USA**. Immigration processes can be overwhelming, with varying requirements, complicated procedures, and the constant threat of visa rejections due to misunderstandings or mistakes. AspireAbroad aims to demystify these processes, providing clear, structured guidance, and essential tools that empower users to manage their visa applications efficiently and effectively.
 
-The immigration and visa application process is frequently difficult and time-consuming, and applicants frequently struggle to comprehend the different eligibility requirements, application procedures, and visa requirements in various nations. This leads to misunderstandings and missed deadlines. In some cases, it may also result in visa denials.
+The platform will serve as a one-stop solution for users seeking guidance on different visa types, such as **tourist**, **work**, **study**, and **permanent residency** visas. By offering a blend of detailed information, personalized support, and step-by-step application assistance, AspireAbroad will increase the likelihood of successful visa approval while saving users time and money.
 
-Furthermore, a lot of applicants seek assistance from agents, but frequently these agents don't give clear instructions and proper guidance  which results in errors, wasted money, and eventually visa rejections. Because they lack a clear path through this complex process, applicants are more likely to be rejected.
+## Teck Stack
+### Frontend:
+**Vite**: A fast, modern build tool for building the frontend. Vite helps improve the development experience with hot module replacement (HMR) and faster builds.
+**React**: A popular JavaScript library for building user interfaces, ideal for creating a dynamic and responsive web application.
+**Tailwind CSS**: For fast and efficient styling with a utility-first approach to ensure a responsive and modern design.
 
-For those seeking to move to countries like **Canada**, **Australia**, the **UK**, and the **USA**, navigating multiple visa types—such as **tourist**, **work**, **permanent residence**, and **study visas** becomes an overwhelming task.
+### Backend:
+**Node.js**: A runtime environment for executing JavaScript on the server side. Node.js is fast and scalable, making it a perfect choice for this project.
+**Express.js**: A web framework for Node.js, simplifying routing and server-side operations.
+**MongoDB**: A NoSQL database for storing user and visa-related data. MongoDB is flexible and scalable, making it an ideal choice for this project’s data storage needs.
 
-## Solution:-
+### Authentication:
+**JWT** (JSON Web Tokens): For secure, token-based user authentication. It enables the creation of stateless, secure sessions for users.
+**OAuth2**: For integrating third-party authentication systems like Google, Facebook, etc.
 
-To address these challenges, I want to build an user-friendly immigration and visa application and assistance website that simplifies the visa application process for users applying to countries like *Canada, Australia, the UK, and the USA.* The platform will provide:
+### Deployment:
 
-- **Comprehensive Visa Information:-** Users can view the specific requirements, qualifying standards, and application procedures for the various visa categories (study, work, tourist, and permanent residence).
-
-- **Support for Visa Applications:-** Users can apply for visas directly on the platform with personalized guidance and support from my team through a simple, step-by-step process.
-
-- **Study Visa Support:-** The platform will match students with qualified universities or colleges based on their eligibility, simplifying the process for applying for study visas.
-
-My platform offers a *clear, step-by-step process* for users to independently navigate visa applications, reducing the risk of mistakes and increasing the chances of approval.
+**Heroku / Vercel**: Platforms for deploying the frontend and backend. These platforms are easy to use and support continuous integration and deployment.
 
 ### Day-by-Day Plan:-
 - *Day1 :-* Set Up Project Repository
