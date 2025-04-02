@@ -1,0 +1,45 @@
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 70%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+    width: 80%; /* Adjust this value to your desired width */
+    margin: 0 auto; /* To center the swiper */
+    padding-top: 50px;
+    padding-bottom: 50px;
+  
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 250px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+/* Set the pagination bullets to white */
+.swiper-pagination-bullet {
+  background-color: white ; /* Ensure it overrides default styles */
+}
+
+/* Optional: Adjust the active pagination bullet to differentiate it */
+.swiper-pagination-bullet-active {
+  background-color: #d01f1f ; /* You can change this to any color for the active bullet */
+}
+
