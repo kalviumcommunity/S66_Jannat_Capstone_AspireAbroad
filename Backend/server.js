@@ -9,13 +9,16 @@ const Canada=require('./routes/CanadaRoutes')
 const UK=require('./routes/UKRoutes')
 const USA=require('./routes/USARoutes')
 const auth=require('./routes/UserRoutes')
+const colleges=require('./routes/CollegesRoutes')
 const app=express()
 app.use(express.json())
+app.use(cors())
 app.use('/Australia', Australia)
 app.use('/Canada',Canada)
 app.use('/USA',USA)
 app.use('/UK',UK)
 app.use('/',auth)
+app.use('/',colleges)
 
 app.listen(PORT,async()=>{
     try{
