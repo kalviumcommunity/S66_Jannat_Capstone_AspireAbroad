@@ -1,0 +1,35 @@
+meta {
+  name: POST 8
+  type: http
+  seq: 13
+}
+
+post {
+  url: http://localhost:0710/USA/visa
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "visaType": "Work",
+    "visaCategory": "H-2A Temporary Agricultural Workers",
+    "stay": "Up to 1 year; may be extended in increments of up to 1 year each, with a maximum stay of 3 years",
+    "cost": "No application fee for the worker; employers bear costs associated with petition filing and worker recruitment",
+    "about": "The H-2A visa allows U.S. employers to bring foreign nationals to the United States to fill temporary or seasonal agricultural jobs when there are not enough U.S. workers who are able, willing, qualified, and available.",
+    "eligibility": [
+      "The job must be of a temporary or seasonal nature in agriculture.",
+      "The employer must demonstrate that there are not enough U.S. workers who are able, willing, qualified, and available to do the temporary work.",
+      "The employment of H-2A workers must not adversely affect the wages and working conditions of similarly employed U.S. workers.",
+      "The employer must submit a temporary labor certification application to the U.S. Department of Labor.",
+      "The employer must file Form I-129, Petition for Nonimmigrant Worker, with U.S. Citizenship and Immigration Services (USCIS).",
+      "Workers must be from eligible countries designated by the U.S. government."
+    ]
+  }
+  
+  
+  
+  
+  
+  
+}
