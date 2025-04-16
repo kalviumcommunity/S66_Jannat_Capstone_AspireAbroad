@@ -10,41 +10,34 @@ import Footer from '../components/Footer';
 const Login = () => {
     const navigate = useNavigate();
     const [input, setInput] = useState({ firstname: '', lastname: '', email: '', password: '' });
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setInput({ ...input, [name]: value });
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         if (!input.firstname || !input.lastname || !input.email || !input.password) {
             toast.error('All fields are required!');
             return;
         }
-
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(input.email)) {
             toast.error('Please enter a valid email!');
             return;
         }
-
         try {
-            const response = await fetch('http://localhost:7000/stepIn', {
+            const response = await fetch('http://localhost:0710/stepIn', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                credentials:"include",
                 body: JSON.stringify(input),
             });
-
             const data = await response.json();
             if (data.token) localStorage.setItem("Token", data.token);
-
+            if (data.userID) localStorage.setItem("userID", data.userID);
             if (!response.ok) throw new Error(data.message || 'Signup failed!');
-
             toast.success('Access Granted! Enjoy Your Experience.🎉');
             setInput({ firstname: '', lastname: '', email: '', password: '' });
-
             setTimeout(() => navigate('/'), 2000);
         } catch (error) {
             toast.error(error.message || 'Something went wrong. Please try again.');

@@ -11,7 +11,7 @@ import TouristUSA from './Pages/TouristUSA'
 import WorkAustralia from './Pages/WorkAustralia'
 import StudyAustralia from './Pages/StudyAustralia'
 import VisaApplication from './Pages/VisaApplication'
-// import Documents from './Pages/Documents'
+import Documents from './Pages/Documents'
 // import Dashboard from './Pages/Dashboard'
 import BookAppointment from './Pages/BookAppointment'
 import Enroll from './Pages/Enroll'
@@ -27,6 +27,8 @@ import AustralisPR from './Pages/AustraliaPR'
 import CanadaPR from './Pages/CanadaPR'
 import UKPR from './Pages/UKPR'
 import USAPR from './Pages/USAPR'
+import Profile from './Pages/Profile'
+import Dashboard from './Pages/Dashboard'
 // import { TouristCanada } from '../../Backend/models/Austourist'
 
 function App() {
@@ -55,8 +57,9 @@ function App() {
       <Route path='/:country/Study-USA' element={<StudyUSA/>}/>
       <Route path='/:country/Study-UK' element={<StudyUK/>}/>
       <Route path="/:country/visa-application" element={<VisaApplication/>}/>
-      {/* <Route path="/documents/:id" element={<Documents/>}/> */}
-      {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
+      <Route path="/documents/:id" element={<Documents/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path='/profile' element={<Profile/>}/>
       <Route path="/appointment" element={<BookAppointment/>}/>
       <Route path="/enroll" element={<Enroll/>}/>
       <Route path="/stepIn" element={<Login/>}/>
@@ -67,3 +70,8 @@ function App() {
 }
 
 export default App
+
+
+
+
+

@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: '../config/.env' });
 
 const authenticate = (req, res, next) => {
-    const token = req.headers?.authorization?.split(" ")[1]; 
+    const token =req.headers?.authorization?.split(" ")[1]; 
     if (token) {
         try {
             const decoded = jwt.verify(token, process.env.JWT_SECRET); 
@@ -13,6 +13,7 @@ const authenticate = (req, res, next) => {
                     userID: decoded.userID,
                     email: decoded.email
                 };
+                // localStorage.setItem(req.user.userID)
                 console.log(req.user)
                 return next(); 
             } else {

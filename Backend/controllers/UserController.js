@@ -38,6 +38,7 @@ const enroll=async(req,res)=>{
 
 const login = async (req, res) => {
     try {
+        // const userID=req.user.userID
         const { firstname,lastname,email, password } = req.body;
         const found = await User.findOne({ email });
         if (!found) {
@@ -52,11 +53,22 @@ const login = async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: '7d' }
         );
-
+        // res.cookie('token', token, {
+        //     httpOnly: false,
+        //     secure: false,
+        //     sameSite: 'Lax',
+        //     maxAge: 7 * 24 * 60 * 60 * 1000 
+        // });
+        // res.cookie("userID", userID,{
+        //     httpOnly:false,
+        //     maxAge: 24*60*60*1000
+        // })
+        // localStorage.setItem("userID", userID)
         res.status(200).json({
             message: "Login successful",
             user: { id: found._id, email: found.email },
-            token: token
+            token: token,
+            userID: found._id
         });
     } catch (error) {
         console.error("Error during login:", error);
