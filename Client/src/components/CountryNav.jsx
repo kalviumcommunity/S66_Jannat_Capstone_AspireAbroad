@@ -3,6 +3,7 @@ import AusFlag from "../assets/AusFlag.png";
 import CanFlag from "../assets/Can.png";
 import UKFlag from "../assets/Uk.png";
 import USAFlag from "../assets/USFlag.png";
+import { Link } from 'react-router-dom';
 
 const CountryNav = ({ name }) => {
 
@@ -39,10 +40,10 @@ const CountryNav = ({ name }) => {
         {/* Buttons */}
         <div className='flex justify-center'>
           <button className='bg-[#003366] p-2 h-11 w-20 text-white rounded-2xl cursor-pointer font-semibold'>
-            <h2>Enroll</h2>
+            <Link to={'/enroll'}>Enroll</Link><h2></h2>
           </button>
           <button className='bg-[#B52721] p-2 w-20 h-11 text-white rounded-2xl ml-3 cursor-pointer font-semibold'>
-            <h2>StepIn</h2>
+            <Link to={'/stepIn'}><h2>StepIn</h2></Link>
           </button>
         </div>
       </div>
