@@ -15,10 +15,11 @@ const app=express()
 const multer = require('multer')
 const Document=require('./models/documents.model')
 const authenticate=require('./middleware/authenticate')
-
+const payment=require('./routes/paypal')
+const blog=require('./routes/BlogRouter')
 app.use(express.json())
 app.use(cors({
-    origin: "http://localhost:5174", 
+    origin: "http://localhost:5173", 
     credentials: true 
   }));
 app.use(cookieParser())
@@ -29,7 +30,8 @@ app.use('/USA',USA)
 app.use('/UK',UK)
 app.use('/',auth)
 app.use('/',colleges)
-
+app.use('/',payment)
+app.use('/',blog)
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, 'uploads/')
@@ -89,6 +91,9 @@ const storage = multer.diskStorage({
       res.status(500).json({ error: 'Failed to fetch documents' });
     }
   });
+  // app.get('/config/paypal',(req,res)=>{
+  //   res.send(process.env.CLIENT)
+  // })
 
 app.listen(PORT,async()=>{
     try{

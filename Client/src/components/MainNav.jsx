@@ -26,8 +26,9 @@ const MainNav = () => {
     <ul className="py-2 text-sm text-[#003366]">
       <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Chat Application</li>
       <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" ><Link to={"/appointment"}>Book Appointment</Link></li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Consultation</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">More Services</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Exam Preparation (IELTS, TOEFL, PTE etc.)</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer"><Link to={"/blog"}>Immigration News & Updates</Link></li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Accommodation Search Assistance</li>
     </ul>
   </div>
 </div>
@@ -35,10 +36,10 @@ const MainNav = () => {
         
         <div className='flex justify-center'>
         {token ? (
-            // If token exists, show profile avatar and link to profile page
+            
             <div className='flex items-center group relative'>
               <Link to={'/profile'}><img
-                src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_640.png" // Replace with the user's avatar URL if available
+                src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_640.png" 
                 alt="User Avatar"
                 className="w-20 h-20 rounded-full mr-3 cursor-pointer"
               /></Link>
@@ -52,7 +53,7 @@ const MainNav = () => {
               
             </div>
           ) : (
-            // If no token, show Login and Signup buttons
+          
             <>
               <button className='bg-[#003366] p-2 h-11 w-20 text-white rounded-2xl cursor-pointer font-semibold'>
                 <Link to='/login'>Login</Link>

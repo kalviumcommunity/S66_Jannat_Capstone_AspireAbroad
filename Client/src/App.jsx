@@ -29,6 +29,8 @@ import UKPR from './Pages/UKPR'
 import USAPR from './Pages/USAPR'
 import Profile from './Pages/Profile'
 import Dashboard from './Pages/Dashboard'
+import Payment from './Pages/Payment'
+import VisaBlog from './Pages/VisaBlog'
 // import { TouristCanada } from '../../Backend/models/Austourist'
 
 function App() {
@@ -36,8 +38,11 @@ function App() {
   return (
     <>
     
+    {/* <Payme/nt/> */}
     <Routes>
+      
     <Route path='/' element={<Home/>}></Route>
+    <Route path='/blog' element={<VisaBlog/>}/>
       <Route path='/visas/:country' element={<Visas/>}></Route>
       <Route path="/:country/tourist-australia" element={<TouristAustralia/>} />
       <Route path="/:country/work-australia" element={<WorkAustralia/>} />
@@ -49,6 +54,7 @@ function App() {
       <Route path='/:country/tourist-USA' element={<TouristUSA/>}/>
       <Route path='/:country/PR-Australia' element={<AustralisPR/>}/>
       <Route path='/:country/PR-UK' element={<UKPR/>}/>
+      <Route path='/payment' element={<Payment/>}/>
       
       <Route path='/:country/PR-USA' element={<USAPR/>}/>
       <Route path='/:country/PR-Canada' element={<CanadaPR/>}/>

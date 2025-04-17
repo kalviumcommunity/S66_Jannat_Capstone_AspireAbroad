@@ -279,7 +279,7 @@ function Profile() {
         <button
               className="px-6 py-4 bg-[#003366] text-white rounded-md hover:bg-[#B52721] transition-all  " 
               >
-                <Link to={'/dashboard'}>Proceed</Link>
+                <Link to={'/payment'}>Proceed</Link>
 
             </button>
               </div>

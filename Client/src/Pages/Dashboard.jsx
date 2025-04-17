@@ -27,6 +27,12 @@ const Dashboard = () => {
     },[])
   const steps = [
     { title: 'Application Submitted', comment: 'Your application has been received.' },
+
+    { 
+  title: 'Visa Application Payment', 
+  comment: 'Your payment for the visa application has been successfully received.' 
+}
+,
     { title: 'Documents Verified', comment: 'Documents reviewed by the case officer.' },
     { title: 'Background Check', comment: 'Background check is in process.' },
     { title: 'Interview Scheduled', comment: 'Interview has been scheduled.' },
