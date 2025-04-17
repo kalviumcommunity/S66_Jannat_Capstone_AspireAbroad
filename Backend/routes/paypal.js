@@ -10,8 +10,8 @@ const paypal = require('paypal-rest-sdk');
 
 paypal.configure({
   mode: 'sandbox', // or 'live'
-  client_id: 'ASpvhJKMD7HrwNFGjHm7lMzE8qDLyvXWQO3xg4xxUj1kbg2a4W0x31Z-uKiswUtBVFxJ3tdRA8KLa1uO',
-  client_secret: 'EHrgL0tCcq8BNdlGKio6m49BVEykOL840f8srpACO-atOjPMZnihP9V9qwDyUqvPJ8Vo11Y5eyhcD-rr'
+  client_id: process.env.CLIENT,
+  client_secret: process.env.PAYPAL_SECRET,
 });
 
 // Route to create a payment
