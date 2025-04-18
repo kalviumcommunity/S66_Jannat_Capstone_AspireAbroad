@@ -61,7 +61,11 @@ const storage = multer.diskStorage({
   app.post('/upload-documents', authenticate, upload.fields(allFields), async (req, res) => {
     try {
       const { visaType, user } = req.body;
+      console.log({visaType, user});
+      
       const files = req.files;
+      console.log(files);
+      
   
       const documents = {};
       for (const key in files) {
@@ -78,7 +82,7 @@ const storage = multer.diskStorage({
       res.json({ message: 'Documents uploaded successfully', data: newDoc });
     } catch (err) {
       console.error(err);
-      res.status(500).json({ error: 'Failed to upload documents', details: err });
+      res.status(500).json({ error: err.message});
     }
   });
   
