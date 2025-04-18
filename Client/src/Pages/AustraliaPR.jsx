@@ -28,7 +28,7 @@ const AustraliaPR = () => {
       
       try {
         const response = await fetch(
-          `http://localhost:0710/Australia/visa?visaType=Permanent`
+          `https://jannat-aspireabroad.onrender.com/Australia/visa?visaType=Permanent`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

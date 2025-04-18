@@ -44,9 +44,9 @@ const storage = multer.diskStorage({
     }
   })
 
-  // First declaration (unused)
-  const upload = multer({ storage })  // Second declaration
-   // First declaration (unused)
+
+  const upload = multer({ storage }) 
+  
 
    const allFields = [
     'Passport', 'ApplicationForm', 'Photograph',

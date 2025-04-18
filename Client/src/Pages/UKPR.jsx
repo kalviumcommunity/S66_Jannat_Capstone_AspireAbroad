@@ -28,7 +28,7 @@ const UKPR = () => {
       
       try {
         const response = await fetch(
-          `http://localhost:0710/UK/visa?visaType=Permanent`
+          `https://jannat-aspireabroad.onrender.com/UK/visa?visaType=Permanent`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

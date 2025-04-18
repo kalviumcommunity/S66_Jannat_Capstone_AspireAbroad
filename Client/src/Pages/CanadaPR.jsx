@@ -29,7 +29,7 @@ const CanadaPR = () => {
       
       try {
         const response = await fetch(
-          `http://localhost:0710/Canada/visa?visaType=Permanent`
+          `https://jannat-aspireabroad.onrender.com/Canada/visa?visaType=Permanent`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

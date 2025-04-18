@@ -81,7 +81,7 @@ const MainNav = () => {
           
             <>
               <button className='bg-[#003366] p-2 h-11 w-20 text-white rounded-2xl cursor-pointer font-semibold'>
-                <Link to='/login'>Enroll</Link>
+                <Link to='/enroll'>Enroll</Link>
               </button>
               <button className='bg-[#B52721] p-2 w-20 h-11 text-white rounded-2xl ml-3 mr-1 cursor-pointer font-semibold'>
                 <Link to='/stepIn'>Step In</Link>

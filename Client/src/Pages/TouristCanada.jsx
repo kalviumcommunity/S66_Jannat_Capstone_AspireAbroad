@@ -16,7 +16,7 @@ const TouristCanada = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:0710/Canada/visa?visaType=Tourist"
+          "https://jannat-aspireabroad.onrender.com/Canada/visa?visaType=Tourist"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
