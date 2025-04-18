@@ -33,7 +33,7 @@ const MainNav = () => {
         <div className='flex w-100  justify-evenly '>
         <h2 className="text-[#003366] hover:border-b-2 border-[#B52721] cursor-pointer font-semibold"><Link to={'/about'}>About Us</Link></h2>
 
-         <h2 className='text-[#003366] hover:border-b-2 border-[#B52721] cursor-pointer font-semibold'><HashLink to="#countries">Countries</HashLink></h2>
+         <h2 className='text-[#003366] hover:border-b-2 border-[#B52721] cursor-pointer font-semibold'><Link to={'/countries'}>Countries</Link></h2>
          <h2 className='text-[#003366] hover:border-b-2 border-[#B52721] cursor-pointer font-semibold'><HashLink to="#footer">Contact Us</HashLink></h2>
          <div className="relative group">
   <h2 className='text-[#003366] font-semibold cursor-pointer group-hover:border-b-2 border-[#B52721]'>

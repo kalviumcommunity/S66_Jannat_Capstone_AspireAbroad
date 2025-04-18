@@ -136,7 +136,7 @@ const BookAppointment = () => {
           country: '',
           date: new Date(),
           time: '',
-          consultationMode: 'zoom',
+          consultationMode: 'In Person meeting',
           notes: ''
         });
         setCurrentStep(1);
