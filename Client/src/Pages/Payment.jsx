@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MainNav from '../components/MainNav';
 import Footer from '../components/Footer';
 import globe from '../assets/Globe.webp';
 
 const VisaPayment = () => {
   const [approvalUrl, setApprovalUrl] = useState(null);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const startPayment = async () => {
     try {

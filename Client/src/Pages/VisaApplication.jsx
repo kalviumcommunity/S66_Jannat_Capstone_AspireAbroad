@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Ausbac from "../assets/AustraliaBackground.webp";
 import Canbac from "../assets/CanadaBackground.webp";
 import UK from "../assets/UKBackground.webp";
@@ -6,10 +6,15 @@ import USA from "../assets/USABackground.webp"
 import CountryNav from '../components/CountryNav'; 
 import { useParams } from 'react-router-dom'; 
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const VisaApplication = () => {
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
   const { country } = useParams(); 
   const [step, setStep] = useState(1);
+  const navigate=useNavigate()
   
 
   const backgroundImage=()=>{
@@ -83,6 +88,21 @@ const VisaApplication = () => {
       setStep(step - 1);
     }
   };
+  const checkAuthentication = () => {
+    const token = localStorage.getItem("Token");
+    if (!token) {
+      navigate("/enroll");
+      return false;
+    }
+    return true;
+  };
+
+  const handleApplyClick = () => {
+    if (!checkAuthentication()) {
+      return;
+    }
+    navigate(`/documents/Study`);
+  };
 
   return (
     <div className="min-h-screen w-full">
@@ -141,15 +161,15 @@ const VisaApplication = () => {
             <div className="mt-8 flex justify-between">
               <button
                 onClick={handlePrev}
-                className={`px-6 py-2 bg-gray-400 text-white rounded-md hover:bg-gray-500 transition-all ${
+                className={`px-6 py-2 bg-gray-400 text-white rounded-md hover:bg-gray-500 transition-all cursor-pointer ${
                   step === 1 ? 'invisible' : ''
                 }`}
               >
                 Previous
               </button>
               <button
-                onClick={handleNext}
-                className="px-6 py-2 bg-[#003366] text-white rounded-md hover:bg-[#B52721] transition-all"
+                onClick={step === visaProcess.length ? handleApplyClick : handleNext}
+                className="px-6 py-2 bg-[#003366] text-white rounded-md hover:bg-[#B52721] transition-all cursor-pointer"
               >
                 {step === visaProcess.length ? 'Submit Application' : 'Next'}
               </button>

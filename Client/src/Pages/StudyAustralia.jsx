@@ -162,7 +162,7 @@ const StudyAustralia = () => {
           <div className="mt-12 text-center">
             <button
               
-              className="px-6 py-4 bg-[#003366] text-white rounded-md hover:bg-[#B52721] transition-all " onClick={()=>visaPage(country)}
+              className="px-6 py-4 bg-[#003366] text-white rounded-md hover:bg-[#B52721] transition-all cursor-pointer" onClick={()=>visaPage(country)}
             >
               Proceed to Student Visa Application
             </button>

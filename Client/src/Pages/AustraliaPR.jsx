@@ -52,23 +52,23 @@ const AustraliaPR = () => {
   const calculatePoints = () => {
     let total = 0;
     
-    // Age points
+  
     if (form.age === '18-24') total += 25;
     if (form.age === '25-32') total += 30;
     if (form.age === '33-39') total += 25;
     if (form.age === '40-44') total += 15;
     
-    // Education points
+   
     if (form.education === 'phd') total += 20;
     if (form.education === 'masters') total += 15;
     if (form.education === 'bachelors') total += 10;
     
-    // Experience points
+   
     if (form.experience === '8+') total += 20;
     if (form.experience === '5-7') total += 15;
     if (form.experience === '3-4') total += 10;
     
-    // Additional points
+    
     if (form.english) total += 10;
     if (form.regional) total += 5;
     if (form.partner) total += 5;
@@ -76,7 +76,7 @@ const AustraliaPR = () => {
     setPoints(total);
   };
   const checkOccupationDemand = () => {
-    // Simulate API call for occupation demand
+
     const demandLevels = ["Low", "Medium", "High"];
     const randomDemand = demandLevels[Math.floor(Math.random() * demandLevels.length)];
     setOccupationDemand(randomDemand);
@@ -100,7 +100,7 @@ const AustraliaPR = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* Absolute Background */}
+ 
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center"
         style={{
@@ -112,7 +112,7 @@ const AustraliaPR = () => {
         }}
       ></div>
 
-      {/* Content Wrapper */}
+     
       <div className="relative z-10">
         <CountryNav name={country} />
         <div className="p-6 max-w-7xl mx-auto">
@@ -259,7 +259,7 @@ const AustraliaPR = () => {
                   </div>
                 </div>
 
-                {/* Visa Cards */}
+             
                 {visaData.map((visa, index) => (
                   <div
                     key={index}
@@ -314,7 +314,7 @@ const AustraliaPR = () => {
                     <div className="mt-6 flex justify-end">
                       <button
                         onClick={() => handleApplyClick(visa.visaType)}
-                        className="bg-[#B52721] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition flex items-center"
+                        className="bg-[#B52721] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition flex items-center cursor-pointer"
                       >
                         Apply Now
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

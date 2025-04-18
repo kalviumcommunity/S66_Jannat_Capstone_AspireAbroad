@@ -4,6 +4,9 @@ import MainNav from '../components/MainNav';
 import { Link } from 'react-router-dom';
 
 function Profile() {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const [documents, setDocuments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [userId, setUserId] = useState(null);
@@ -175,7 +178,7 @@ function Profile() {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div className="border-b border-gray-200">
                   <nav className="flex -mb-px">
-                    {['all', 'tourist', 'student', 'work'].map((type) => (
+                    {['all', 'tourist', 'study', 'work','permanent'].map((type) => (
                       <button
                         key={type}
                         onClick={() => setActiveTab(type)}
@@ -277,7 +280,7 @@ function Profile() {
         </div>
         <div className='w-full flex justify-center items-center'>
         <button
-              className="px-6 py-4 bg-[#003366] text-white rounded-md hover:bg-[#B52721] transition-all  " 
+              className="px-6 py-4 bg-[#003366] text-white rounded-md hover:bg-[#B52721] transition-all cursor-pointer " 
               >
                 <Link to={'/payment'}>Proceed</Link>
 

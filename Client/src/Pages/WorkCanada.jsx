@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import CountryNav from "../components/CountryNav";
 import Footer from "../components/Footer";
 import Canbac from "../assets/CanadaBackground.webp";
+import { useNavigate } from "react-router-dom";
 
 const WorkCanada = () => {
   const [visaData, setVisaData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate=useNavigate()
 
   const { country } = useParams();
 
@@ -36,7 +38,21 @@ const WorkCanada = () => {
     };
     fetchData();
   }, []);
+  const checkAuthentication = () => {
+    const token = localStorage.getItem("Token");
+    if (!token) {
+      navigate("/enroll");
+      return false;
+    }
+    return true;
+  };
 
+  const handleApplyClick = (id) => {
+    if (!checkAuthentication()) {
+      return;
+    }
+    navigate(`/documents/${id}`);
+  };
   return (
     <div className="relative min-h-screen">
 
@@ -106,7 +122,7 @@ const WorkCanada = () => {
                     </ul>
 
                     <div className="flex justify-end mt-4">
-                      <button className="bg-[#B52721] text-white px-6 py-2 rounded-lg text-lg font-bold transition hover:bg-red-700 cursor-pointer">
+                      <button className="bg-[#B52721] text-white px-6 py-2 rounded-lg text-lg font-bold transition hover:bg-red-700 cursor-pointer" onClick={() => handleApplyClick(visa.visaType)}>
                         Apply Now
                       </button>
                     </div>
