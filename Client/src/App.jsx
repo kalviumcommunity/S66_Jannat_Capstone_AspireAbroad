@@ -31,6 +31,7 @@ import Profile from './Pages/Profile'
 import Dashboard from './Pages/Dashboard'
 import Payment from './Pages/Payment'
 import VisaBlog from './Pages/VisaBlog'
+import Countries from './components/Countries'
 // import { TouristCanada } from '../../Backend/models/Austourist'
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
       <Route path='/:country/PR-Australia' element={<AustralisPR/>}/>
       <Route path='/:country/PR-UK' element={<UKPR/>}/>
       <Route path='/payment' element={<Payment/>}/>
+      <Route path='/countries' element={<Countries/>}/>
       
       <Route path='/:country/PR-USA' element={<USAPR/>}/>
       <Route path='/:country/PR-Canada' element={<CanadaPR/>}/>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Testimonials = () => {
   return (
-    <div className="max-w-screen-xl mx-auto mt-12">
+    <div className="max-w-screen-xl mx-auto mt-12 mb-16">
       <h2 className="text-5xl font-bold text-center mb-6">What Our Clients Say</h2>
       <div className="flex flex-wrap justify-center gap-8">
       

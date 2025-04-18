@@ -18,7 +18,7 @@ const handleClick=(country)=>{
 
 }
     return (
-        <div className='mt-12'>
+        <div className='mt-12' id='countries'>
             <div className='flex justify-center text-center'>
                 <h2 className='text-5xl font-bold w-1/2'>Countries We Support For Immigration</h2>
             </div>

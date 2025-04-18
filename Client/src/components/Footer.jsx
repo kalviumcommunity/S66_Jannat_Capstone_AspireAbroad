@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-[#003366] py-10 shadow-2xl mt-16 w-full ">
+    <footer className="bg-white text-[#003366] py-10 shadow-2xl w-full " id="footer">
       <div className="max-w-screen-xl mx-auto px-4 ">
         <div className="flex flex-wrap justify-between items-start">
           
