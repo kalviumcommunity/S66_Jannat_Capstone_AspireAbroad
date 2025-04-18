@@ -21,7 +21,7 @@ const blog=require('./routes/BlogRouter')
 const appointment=require('./routes/Appointment')
 app.use(express.json())
 app.use(cors({
-    origin: ["http://localhost:5173", "https://jannat-aspireabroad.onrender.com"],
+    origin: ["http://localhost:5173", "https://bucolic-biscuit-1fa6bf.netlify.app"],
     credentials: true 
   }));
 app.use(cookieParser())
