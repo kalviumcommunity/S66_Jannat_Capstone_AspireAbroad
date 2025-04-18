@@ -17,6 +17,8 @@ const Document=require('./models/documents.model')
 const authenticate=require('./middleware/authenticate')
 const payment=require('./routes/paypal')
 const blog=require('./routes/BlogRouter')
+// const appointment=require('./routes/Appointment')
+const appointment=require('./routes/Appointment')
 app.use(express.json())
 app.use(cors({
     origin: "http://localhost:5173", 
@@ -32,6 +34,7 @@ app.use('/',auth)
 app.use('/',colleges)
 app.use('/',payment)
 app.use('/',blog)
+app.use('/',appointment)
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, 'uploads/')
