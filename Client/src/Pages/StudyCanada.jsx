@@ -32,7 +32,7 @@ const StudyCanada = () => {
       setColleges([]);
 
       try {
-        const response = await fetch('http://localhost:0710/college?country=Canada');
+        const response = await fetch('https://jannat-aspireabroad.onrender.com/college?country=Canada');
         const data = await response.json();
 
         if (response.ok) {

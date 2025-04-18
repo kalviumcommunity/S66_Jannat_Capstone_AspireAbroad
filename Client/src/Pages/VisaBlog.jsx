@@ -8,7 +8,7 @@ const VisaBlog = () => {
    const [data, setData] = useState([]);
 
    const fetchData = async () => {
-    const request = await fetch("http://localhost:0710/blog");
+    const request = await fetch("https://jannat-aspireabroad.onrender.com/blog");
     const response = await request.json();
     if (response) {
         console.log(response);

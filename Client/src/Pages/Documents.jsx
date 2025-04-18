@@ -48,6 +48,7 @@ const Documents = () => {
     e.preventDefault();
 
     const data = new FormData();
+    console.log("data",data)
     data.append('user', formData.user);
     data.append('visaType', formData.visaType);
 
@@ -57,16 +58,16 @@ const Documents = () => {
 
     try {
       const token=localStorage.getItem('Token')
-      console.log(token)
-      const res = await fetch('http://localhost:0710/upload-documents', {
+      const res = await fetch('https://jannat-aspireabroad.onrender.com/upload-documents', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`
         },
         body: data
       });
-
+      console.log('response', res)
       const result = await res.json();
+      console.log("res",result)
       if (res.ok) {
         toast.success('Documents uploaded successfully!');
         setTimeout(() => navigate('/profile'), 2000);

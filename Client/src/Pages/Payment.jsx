@@ -11,7 +11,7 @@ const VisaPayment = () => {
 
   const startPayment = async () => {
     try {
-      const response = await fetch('http://localhost:0710/create-payment', {
+      const response = await fetch('https://jannat-aspireabroad.onrender.com/create-payment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

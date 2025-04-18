@@ -18,7 +18,7 @@ const TouristAustralia = () => {
       const visaType = "Tourist";
       try {
         const response = await fetch(
-          `http://localhost:0710/Australia/visa?visaType=${visaType}`
+          `https://jannat-aspireabroad.onrender.com/Australia/visa?visaType=${visaType}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

@@ -17,7 +17,7 @@ const WorkAustralia = () => {
       
       try {
         const response = await fetch(
-          `http://localhost:0710/Australia/visa?visaType=Work`
+          `https://jannat-aspireabroad.onrender.com/Australia/visa?visaType=Work`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

@@ -29,7 +29,7 @@ function Profile() {
     const token = localStorage.getItem('Token');
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:0710/user-documents/${id}`, {
+      const res = await fetch(`https://jannat-aspireabroad.onrender.com/user-documents/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

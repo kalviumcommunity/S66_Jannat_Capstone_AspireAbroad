@@ -58,7 +58,7 @@ const BookAppointment = () => {
   const fetchUser = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`http://localhost:0710/appointment/${userId}`, {
+      const response = await axios.get(`https://jannat-aspireabroad.onrender.com/appointment/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -115,7 +115,7 @@ const BookAppointment = () => {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        'http://localhost:0710/appointment',
+        'https://jannat-aspireabroad.onrender.com/appointment',
         {
           service: formData.service,
           country: formData.country,
