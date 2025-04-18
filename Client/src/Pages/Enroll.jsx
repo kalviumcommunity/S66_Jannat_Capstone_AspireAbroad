@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useEffect } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import MainNav from '../components/MainNav'; 
 import enroll from "../assets/enroll.jpg"; 
@@ -9,6 +9,9 @@ import Footer from '../components/Footer';
 
 const Enroll = () => {
     const navigate = useNavigate();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     const [input, setInput] = useState({
         firstname: '',
