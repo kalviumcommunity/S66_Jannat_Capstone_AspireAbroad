@@ -21,7 +21,7 @@ const blog=require('./routes/BlogRouter')
 const appointment=require('./routes/Appointment')
 app.use(express.json())
 app.use(cors({
-    origin: "http://localhost:5173", 
+    origin: "https://jannat-aspireabroad.onrender.com", 
     credentials: true 
   }));
 app.use(cookieParser())
