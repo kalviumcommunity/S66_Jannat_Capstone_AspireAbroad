@@ -21,7 +21,7 @@ const blog=require('./routes/BlogRouter')
 const appointment=require('./routes/Appointment')
 app.use(express.json())
 app.use(cors({
-    origin: ["http://localhost:5173", "https://hilarious-dusk-aa087d.netlify.app/"],
+    origin: ["http://localhost:5173", "https://hilarious-dusk-aa087d.netlify.app"],
     credentials: true 
   }));
 app.use(cookieParser())
