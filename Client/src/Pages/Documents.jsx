@@ -7,6 +7,9 @@ import Footer from '../components/Footer';
 import globe from '../assets/Globe.webp';
 
 const Documents = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { id: visaTypeParam } = useParams(); // e.g., /documents/Work
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ user: '', visaType: '' });
@@ -98,22 +101,7 @@ const Documents = () => {
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* <div>
-                <label htmlFor="user" className="block text-lg font-medium text-[#003366] mb-2">
-                  User ID
-                </label>
-                <input
-                  type="text"
-                  name="user"
-                  id="user"
-                  value={formData.user}
-                  onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#003366]"
-                  required
-                />
-              </div> */}
 
-              {/* Hidden/disabled visaType select input for safety */}
               <input type="hidden" name="visaType" value={formData.visaType} />
 
               {requiredDocs.map((doc, index) => (
@@ -135,7 +123,7 @@ const Documents = () => {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="bg-[#003366] text-white px-8 py-3 rounded-md hover:bg-[#B52721] transition-all"
+                  className="bg-[#003366] text-white px-8 py-3 rounded-md hover:bg-[#B52721] transition-all cursor-pointer"
                   
                 >
                   Submit Documents

@@ -1,8 +1,12 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import MainNav from '../components/MainNav';
+import { useEffect } from 'react';
 
 const About = () => {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div className=" text-gray-800">
       {/* MainNav */}

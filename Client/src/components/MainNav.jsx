@@ -23,6 +23,12 @@ const MainNav = () => {
 
     navigate(`/appointment`);
   };
+
+  const handleLoggedOut=()=>{
+    localStorage.removeItem('Token');
+    localStorage.removeItem('userID')
+    navigate('/')
+  }
   return (
     <div className='h-20 w-full flex justify-center items-center shadow-lg z-50 bg-white  border-b border-gray-300   fixed top-0 left-0  '>
       <div className='w-full flex justify-between items-center h-15'>
@@ -66,7 +72,7 @@ const MainNav = () => {
     <ul className="py-2 text-sm text-[#003366]">
       <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" ><Link to={"/profile"}>My Profile</Link></li>
       <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" ><Link to={"/dashboard"}>User Dashboard</Link></li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={handleLoggedOut}>Logout</li>
     </ul>
   </div>
               
@@ -75,10 +81,10 @@ const MainNav = () => {
           
             <>
               <button className='bg-[#003366] p-2 h-11 w-20 text-white rounded-2xl cursor-pointer font-semibold'>
-                <Link to='/login'>Login</Link>
+                <Link to='/login'>Enroll</Link>
               </button>
               <button className='bg-[#B52721] p-2 w-20 h-11 text-white rounded-2xl ml-3 mr-1 cursor-pointer font-semibold'>
-                <Link to='/signup'>Sign Up</Link>
+                <Link to='/stepIn'>Step In</Link>
               </button>
             </>
           )}

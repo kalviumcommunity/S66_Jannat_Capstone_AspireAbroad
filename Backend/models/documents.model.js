@@ -23,9 +23,9 @@ const documentSchema = new mongoose.Schema({
     PurposeOfVisitLetter: { type: String, required: function() { return this.visaType === 'Tourist'; } },
     
     
-    WorkExperience: { type: String, required: isRequiredForVisaTypes(['Work', 'Permanent']) },
+    WorkExperience: { type: String, required: isRequiredForVisaTypes('Work') },
     EducationExperience: { type: String, required: function() { return this.visaType === 'Work'; } },
-    MedicalExam: { type: String, required: isRequiredForVisaTypes(['Work', 'Permanent']) },
+    MedicalExam: { type: String, required: isRequiredForVisaTypes('Work') },
     Skills: { type: String, required: function() { return this.visaType === 'Work'; } },
     EnglishTestScore: { type: String, required: function() { return this.visaType === 'Work'; } },
     GovernmentAgreement: { type: String, required: function() { return this.visaType === 'Work'; } },

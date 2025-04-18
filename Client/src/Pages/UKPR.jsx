@@ -203,12 +203,7 @@ const UKPR = () => {
                           >
                             5+ years
                           </button>
-                          {/* <button
-                            onClick={() => setForm({...form, experience: '8+'})}
-                            className={`py-2 px-3 rounded-lg ${form.experience === '8+' ? 'bg-[#B52721]' : 'bg-white bg-opacity-10'} border border-white border-opacity-30 text-black`}
-                          >
-                            8+ years
-                          </button> */}
+                       
                         </div>
                       </div>
 
@@ -257,7 +252,7 @@ const UKPR = () => {
                         </div>
                         <button
                           onClick={calculatePoints}
-                          className="w-full bg-[#B52721] hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition"
+                          className="w-full bg-[#B52721] hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition cursor-pointer"
                         >
                           Calculate Now
                         </button>
@@ -321,7 +316,7 @@ const UKPR = () => {
                     <div className="mt-6 flex justify-end">
                       <button
                         onClick={() => handleApplyClick(visa.visaType)}
-                        className="bg-[#B52721] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition flex items-center"
+                        className="bg-[#B52721] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition flex items-center cursor-pointer"
                       >
                         Apply Now
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -363,7 +358,7 @@ const UKPR = () => {
                         <option>Superior (IELTS 8.0)</option>
                       </select>
                     </div>
-                    <button className="w-full bg-[#B52721] text-white py-2 px-4 rounded-md hover:bg-red-700 transition" onClick={checkOccupationDemand}>
+                    <button className="w-full bg-[#B52721] text-white py-2 px-4 rounded-md hover:bg-red-700 transition cursor-pointer" onClick={checkOccupationDemand}>
                       Check Occupation Demand
                     </button>
                     {occupationDemand && (

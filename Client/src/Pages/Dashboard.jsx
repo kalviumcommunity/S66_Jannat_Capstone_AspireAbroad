@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,  } from 'react';
 import MainNav from '../components/MainNav';
 import Footer from '../components/Footer';
 import globe from '../assets/Globe.webp'; 
-
+import { useNavigate } from 'react-router-dom';
 const Dashboard = () => {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
+  const navigate=useNavigate()
   const [userDetail, setUserDetails] = useState([]);
   const [appointment,setAppointment]=useState([])
   const id = localStorage.getItem('userID');
@@ -26,16 +30,21 @@ const Dashboard = () => {
     }
   };
 
-  const fetchappointment=async()=>{
+
+const fetchappointment = async () => {
+  try {
     const response = await fetch(`http://localhost:0710/appointment/${id}`, {
       headers: {
         'Authorization': `Bearer ${token}`,
       }
-    })
-    const data= await response.json();
-    console.log(data.appointments)
-    setAppointment(data.appointments)
+    });
+    const data = await response.json();
+    setAppointment(data.appointments || []); 
+  } catch (error) {
+    console.error('Error fetching appointments:', error);
+    setAppointment([]); 
   }
+};
   useEffect(()=>{
     fetchappointment()
   },[])
@@ -104,23 +113,30 @@ const Dashboard = () => {
               </div>
 
               <div className='text-sm text-gray-700 bg-blue-50 p-4 rounded-lg border border-blue-100 mt-10'>
-  <h2 className="font-bold text-xl mb-2  text-[#003366]">Appointment Summary:</h2>
-  {appointment && appointment.length > 0 ? (
+  <h2 className="font-bold text-xl mb-2 text-[#003366]">Appointment Summary:</h2>
+  {appointment.length > 0 ? (
     appointment.map((i, idx) => (
-      <div>
-
-      <ul key={idx} className="list-disc ml-5 space-y-1">
-        <li><strong>Service:</strong> {i.service || 'Not selected'}</li>
-        <li><strong>Country:</strong> {i.country || 'Not selected'}</li>
-        <li><strong>Date:</strong> {new Date(i.date).toDateString() || 'Not selected'}</li> {/* Convert the date to a readable format */}
-        <li><strong>Time:</strong> {i.time || 'Not selected'}</li> {/* If time exists */}
-        <li><strong>Mode:</strong> {i.consultationMode || 'Not selected'}</li>
-      </ul>
-      <h2 className='mt-2 font-bold text-[#B52721]' >We will contact you soon, Stay Tuned</h2>
+      <div key={idx}>
+        <ul className="list-disc ml-5 space-y-1">
+          <li><strong>Service:</strong> {i.service}</li>
+          <li><strong>Country:</strong> {i.country}</li>
+          <li><strong>Date:</strong> {new Date(i.date).toDateString()}</li>
+          <li><strong>Time:</strong> {i.time}</li>
+          <li><strong>Mode:</strong> {i.consultationMode}</li>
+        </ul>
+        <h2 className='mt-2 font-bold text-[#B52721]'>We will contact you soon, Stay Tuned</h2>
       </div>
     ))
   ) : (
-    <p>No appointment found.</p>
+    <div className="text-center py-4">
+      <p className="text-gray-500">You haven't booked any appointments yet</p>
+      <button 
+        onClick={() => navigate('/appointment')}
+        className="mt-2 px-4 py-2 bg-[#B52721] text-white rounded hover:bg-red-600 cursor-pointer"
+      >
+        Book Your First Appointment
+      </button>
+    </div>
   )}
 </div>
 

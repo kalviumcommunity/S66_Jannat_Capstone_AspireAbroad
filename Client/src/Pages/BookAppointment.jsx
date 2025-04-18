@@ -63,18 +63,24 @@ const BookAppointment = () => {
           Authorization: `Bearer ${token}`
         }
       });
-      
-      if (response.data.appointments.length > 0) {
+  
+ 
+      if (response.data.appointments && response.data.appointments.length > 0) {
         const userData = response.data.appointments[0].user;
         setUser({
-          firstname: userData.firstname,
-          lastname: userData.lastname,
-          email: userData.email,
-          phonenumber: userData.phonenumber
+          firstname: userData.firstname || '',
+          lastname: userData.lastname || '',
+          email: userData.email || '',
+          phonenumber: userData.phonenumber || ''
         });
       }
+
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to fetch user data');
+    
+      if (err.response?.status !== 404) { 
+        setError(err.response?.data?.message || 'Failed to fetch user data');
+        toast.error('Failed to load user information');
+      }
       console.error('Error fetching user:', err);
     } finally {
       setIsLoading(false);
@@ -85,7 +91,7 @@ const BookAppointment = () => {
     fetchUser();
   }, [token, userId]);
 
-  // Rotate images every 5 seconds
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % destinationImages.length);
