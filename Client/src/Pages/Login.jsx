@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,9 @@ import Footer from '../components/Footer';
 
 const Login = () => {
     const navigate = useNavigate();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     const [input, setInput] = useState({ firstname: '', lastname: '', email: '', password: '' });
     const handleInputChange = (e) => {
         const { name, value } = e.target;
