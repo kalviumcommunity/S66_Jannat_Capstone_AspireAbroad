@@ -17,14 +17,14 @@ const Dashboard = () => {
   const fetchdata = async () => {
     try {
      
-      const res = await fetch(`https://jannat-aspireabroad.onrender.com/user-documents/${id}`, {
+      const res = await fetch(`http://localhost:0710/getUser/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         }
       });
       const data = await res.json();
       console.log(data);
-      setUserDetails(data.documents[0]?.user || null);
+      setUserDetails(data);
     } catch (error) {
       console.log(error);
     }
