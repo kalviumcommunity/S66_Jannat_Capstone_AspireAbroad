@@ -58,7 +58,7 @@ const BookAppointment = () => {
   const fetchUser = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:0710/getUser/${userId}`, {
+      const response = await fetch(`https://jannat-aspireabroad.onrender.com/getUser/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
