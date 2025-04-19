@@ -58,22 +58,15 @@ const BookAppointment = () => {
   const fetchUser = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`https://jannat-aspireabroad.onrender.com/appointment/${userId}`, {
+      const response = await fetch(`http://localhost:0710/getUser/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
-  
- 
-      if (response.data.appointments && response.data.appointments.length > 0) {
-        const userData = response.data.appointments[0].user;
-        setUser({
-          firstname: userData.firstname || '',
-          lastname: userData.lastname || '',
-          email: userData.email || '',
-          phonenumber: userData.phonenumber || ''
-        });
-      }
+      const data= await response.json();
+      console.log(data);
+      setUser(data)
+       
 
     } catch (err) {
     

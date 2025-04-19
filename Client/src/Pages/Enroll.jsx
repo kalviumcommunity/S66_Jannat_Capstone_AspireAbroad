@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate, useEffect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import MainNav from '../components/MainNav'; 
 import enroll from "../assets/enroll.jpg"; 
@@ -45,12 +45,14 @@ const Enroll = () => {
 
         const phoneRegex=/^\d{10}$/;
         if(!phoneRegex.test(input.phonenumber)){
-            toast.error('Phone number must be 10 digits')
+            toast.error('Phone number must be 10 digits');
+            return
         }
 
         const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(!emailRegex.test(input.email)){
-            toast.error('Please enter a valid email')
+            toast.error('Please enter a valid email');
+            return
         }
 
         
