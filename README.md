@@ -44,3 +44,6 @@ The platform will serve as a one-stop solution for users seeking guidance on dif
 - *Day11:-* Final Deployment
 - *Day12:-* Documentation and Final Presentation
 
+### Backend Deployed Link:-
+https://jannat-aspireabroad.onrender.com
+
