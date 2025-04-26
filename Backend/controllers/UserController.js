@@ -38,7 +38,6 @@ const enroll=async(req,res)=>{
 
 const login = async (req, res) => {
     try {
-        // const userID=req.user.userID
         const { firstname,lastname,email, password } = req.body;
         const found = await User.findOne({ email });
         if (!found) {

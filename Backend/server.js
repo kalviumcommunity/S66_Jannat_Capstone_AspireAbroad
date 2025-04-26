@@ -17,7 +17,6 @@ const Document=require('./models/documents.model')
 const authenticate=require('./middleware/authenticate')
 const payment=require('./routes/paypal')
 const blog=require('./routes/BlogRouter')
-// const appointment=require('./routes/Appointment')
 const appointment=require('./routes/Appointment')
 app.use(express.json())
 app.use(cors({

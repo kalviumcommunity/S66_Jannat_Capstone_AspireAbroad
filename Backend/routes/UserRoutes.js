@@ -5,7 +5,7 @@ const authenticate = require("../middleware/authenticate");
 
 router.post("/enroll", enroll);
 router.post("/stepIn", login);
-router.get("/getUser/:id", authenticate, getUser);  // Ensure it's authenticate -> getUser
+router.get("/getUser/:id", authenticate, getUser); 
 
 
 module.exports = router;
