@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// Helper function to check if the field should be required based on visa types
+
 const isRequiredForVisaTypes = (visaTypes) => {
   return function () {
     return visaTypes.includes(this.visaType);

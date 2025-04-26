@@ -29,9 +29,9 @@ const createAppointment=async(req,res)=>{
 
 const getAppointmentsByUserId = async (req, res) => {
     try {
-        const userId = req.params.userId; // Get userId from URL params
+        const userId = req.params.userId; 
 
-        // Find all appointments for the given userId and populate the user details
+        
         const appointments = await Appointment.find({ user: userId }).populate('user', 'firstname lastname email phonenumber');
 
         if (!appointments || appointments.length === 0) {
