@@ -105,7 +105,7 @@ const storage = multer.diskStorage({
 app.listen(PORT,async()=>{
     try{
         await mongoose.connect(MongoURL)
-        console.log("Connected to Database")
+        console.log("Connected to MongoDB Database")
     }catch(error){
         console.log("Error is", error)
     }
