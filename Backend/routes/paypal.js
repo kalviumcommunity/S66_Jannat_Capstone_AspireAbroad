@@ -74,7 +74,7 @@ router.get('/success', (req, res) => {
   });
 });
 
-// Cancel route
+
 router.get('/cancel', (req, res) => {
   res.send('Payment cancelled');
 });
