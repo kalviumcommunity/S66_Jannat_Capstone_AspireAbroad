@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import MainNav from '../components/MainNav';
 import Footer from '../components/Footer';
 
-const socket = io('http://localhost:0710'); // Update if needed
+const socket = io('https://jannat-aspireabroad.onrender.com'); // Update if needed
 
 function ChatApp() {
   const [message, setMessage] = useState('');
