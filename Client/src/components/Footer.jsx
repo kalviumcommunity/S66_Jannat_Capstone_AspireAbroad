@@ -1,5 +1,9 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -46,17 +50,17 @@ const Footer = () => {
           <div className="w-full md:w-1/4">
             <h2 className="text-lg font-semibold">Follow Us</h2>
             <div className="mt-4 flex space-x-4">
-              <a href="#" className="text-gray-600 hover:text-[#B52721]">
-                <i className="fab fa-facebook-f"></i>
+              <a href="#">
+                <FaLinkedin className="text-4xl text-black" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-[#B52721]">
-                <i className="fab fa-twitter"></i>
+              <a href="#" >
+                <FaGithub className="text-4xl text-black"  />
               </a>
-              <a href="#" className="text-gray-600 hover:text-[#B52721]">
-                <i className="fab fa-linkedin-in"></i>
+              <a href="#">
+                <FaSquareInstagram className="text-4xl text-black" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-[#B52721]">
-                <i className="fab fa-instagram"></i>
+              <a href="#" >
+                <FaSquareXTwitter className="text-4xl text-black"/>
               </a>
             </div>
           </div>

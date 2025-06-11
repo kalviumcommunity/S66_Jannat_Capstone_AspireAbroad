@@ -33,13 +33,13 @@ const MainNav = () => {
     <div className='h-20 w-full flex justify-center items-center shadow-lg z-50 bg-white  border-b border-gray-300   fixed top-0 left-0  '>
       <div className='w-full flex justify-between items-center h-15'>
         <div className='flex items-center'>
-            <img className='h-20 w-20' src={logo} alt='logo'></img>
+            <img className='h-20 w-20 cursor-pointer'onClick={()=>navigate('/')}  src={logo} alt='logo'></img>
             <h1 className='text-[#003366] text-2xl' >Aspire<span className='text-[#B52721]'>Abroad</span></h1>
         </div>
         <div className='flex w-100  justify-evenly '>
         <h2 className="text-[#003366] hover:border-b-2 border-[#B52721] cursor-pointer font-semibold"><Link to={'/about'}>About Us</Link></h2>
 
-         <h2 className='text-[#003366] hover:border-b-2 border-[#B52721] cursor-pointer font-semibold'><Link to={'/countries'}>Countries</Link></h2>
+         <h2 className='text-[#003366] hover:border-b-2 border-[#B52721] cursor-pointer font-semibold'><HashLink to='#countries'>Countries</HashLink></h2>
          <h2 className='text-[#003366] hover:border-b-2 border-[#B52721] cursor-pointer font-semibold'><HashLink to="#footer">Contact Us</HashLink></h2>
          <div className="relative group">
   <h2 className='text-[#003366] font-semibold cursor-pointer group-hover:border-b-2 border-[#B52721]'>
@@ -49,11 +49,11 @@ const MainNav = () => {
   {/* Dropdown Menu */}
   <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
     <ul className="py-2 text-sm text-[#003366]">
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Chat Application</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer"><Link to={"/chat"}>Chat Application</Link></li>
       <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={handleApplyClick}>Book Appointment</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Exam Preparation (IELTS, TOEFL, PTE etc.)</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer"><Link to={"/preparation"}>Exam Preparation (IELTS, TOEFL, PTE etc.)</Link></li>
       <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer"><Link to={"/blog"}>Immigration News & Updates</Link></li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Accommodation Search Assistance</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer"><Link to={"/assistance"}>Accommodation Search Assistance</Link></li>
     </ul>
   </div>
 </div>
