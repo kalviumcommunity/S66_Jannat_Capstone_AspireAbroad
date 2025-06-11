@@ -31,7 +31,7 @@ const VisaBlog = () => {
           style={{ backgroundImage: `url(${globe})`, backgroundPosition: '50% 9%' }}
         ></div>
 
-        <div className="relative z-10">
+        <div className="relative z-10 ">
           <MainNav />
           
     

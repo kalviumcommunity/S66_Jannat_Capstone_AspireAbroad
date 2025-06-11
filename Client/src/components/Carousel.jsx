@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { HashLink } from 'react-router-hash-link';
 import video1 from "../assets/video1.mp4";
 import video2 from "../assets/video2.mp4";
 import video3 from "../assets/video3.mp4";
@@ -53,8 +54,8 @@ const VideoCarousel = () => {
               </h1>
               
               <button className="mt-6 px-6 py-3 text-lg font-semibold text-white bg-[#B52721] rounded-lg shadow-md 
-                hover:bg-red-700 transition duration-300 cursor-pointer">
-                Discover More
+                hover:bg-red-700 transition duration-300 cursor-pointer"><HashLink to="#countries">Discover More</HashLink>
+                
               </button>
             </div>
           </div>

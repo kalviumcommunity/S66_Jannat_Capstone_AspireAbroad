@@ -32,13 +32,16 @@ import Dashboard from './Pages/Dashboard'
 import Payment from './Pages/Payment'
 import VisaBlog from './Pages/VisaBlog'
 import Countries from './components/Countries'
+import Assistance from './Pages/Assisstance'
+import ExamPreparation from './Pages/ExamPreparation'
+import ChatApp from './Pages/chatApp'
 // import { TouristCanada } from '../../Backend/models/Austourist'
 
 function App() {
 
   return (
     <>
-    
+    {/* <ExamPreparation/> */}
     {/* <Payme/nt/> */}
     <Routes>
       
@@ -57,6 +60,9 @@ function App() {
       <Route path='/:country/PR-UK' element={<UKPR/>}/>
       <Route path='/payment' element={<Payment/>}/>
       <Route path='/countries' element={<Countries/>}/>
+      <Route path='/assistance' element={<Assistance/>}/>
+      <Route path='/preparation' element={<ExamPreparation/>}/>
+      <Route path='/chat' element={<ChatApp/>}/>
       
       <Route path='/:country/PR-USA' element={<USAPR/>}/>
       <Route path='/:country/PR-Canada' element={<CanadaPR/>}/>
@@ -72,8 +78,8 @@ function App() {
       <Route path="/enroll" element={<Enroll/>}/>
       <Route path="/stepIn" element={<Login/>}/>
       <Route path='/about' element={<About/>}/>
-    </Routes>
-    </>
+    </Routes> 
+    </> 
   )
 }
 

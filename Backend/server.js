@@ -18,11 +18,17 @@ const authenticate=require('./middleware/authenticate')
 const payment=require('./routes/paypal')
 const blog=require('./routes/BlogRouter')
 const appointment=require('./routes/Appointment')
+const { Server } = require('socket.io');
 app.use(express.json())
-app.use(cors({
+const http = require('http');
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
     origin: ["http://localhost:5173", "https://resonant-kangaroo-7b36ee.netlify.app"],
-    credentials: true 
-  }));
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
+});
 app.use(cookieParser())
 app.use('/uploads', express.static('uploads'))
 app.use('/Australia', Australia)
@@ -101,12 +107,26 @@ const storage = multer.diskStorage({
   //   res.send(process.env.CLIENT)
   // })
 
-app.listen(PORT,async()=>{
-    try{
-        await mongoose.connect(MongoURL)
-        console.log("Connected to MongoDB Database")
-    }catch(error){
-        console.log("Error is", error)
-    }
-    console.log(`listening on http://localhost:${PORT}`)
-})
+io.on('connection', socket => {
+  console.log(' New client connected:', socket.id);
+
+  socket.on('send_message', data => {
+    // Broadcast message to all connected clients
+    io.emit('receive_message', data);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('Client disconnected:', socket.id);
+  });
+});
+
+
+server.listen(PORT, async () => {
+  try {
+    await mongoose.connect(MongoURL);
+    console.log("✅ Connected to MongoDB Database");
+  } catch (error) {
+    console.error("MongoDB Connection Error:", error);
+  }
+  console.log(`Server listening on http://localhost:${PORT}`);
+});
