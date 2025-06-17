@@ -8,6 +8,31 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Riot&display=swap');
       </style>
+<style>
+@keyframes bigArcFlight {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(100px) translateY(-80px);
+  }
+  50% {
+    transform: translateX(200px) translateY(0px);
+  }
+  75% {
+    transform: translateX(100px) translateY(80px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+.big-arc-plane {
+  animation: bigArcFlight 4s ease-in-out infinite;
+}
+</style>
+
+
   </head>
   <body>
     <div id="root"></div>
