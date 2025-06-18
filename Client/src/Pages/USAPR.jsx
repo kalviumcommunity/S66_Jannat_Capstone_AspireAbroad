@@ -136,7 +136,9 @@ const USAPR = () => {
           <p className="text-xl text-gray-700 mb-8">Your pathway to permanent residence in the United States</p>
 
           {loading ? (
-            <p className="text-center text-lg mt-4">Loading...</p>
+            <div className="flex justify-center items-center h-40">
+    <div className="big-arc-plane text-6xl">✈️</div>
+  </div>
           ) : error ? (
             <p className="text-center text-red-500 mt-4">{error}</p>
           ) : (

@@ -7,6 +7,7 @@ const getcolleges=async(req,res)=>{
     try{
         const found = colleges.filter(college => college.country.toLowerCase() === country.toLowerCase());
         if (found){
+            console.log(found)
             return res.status(200).json({found})
         }
 

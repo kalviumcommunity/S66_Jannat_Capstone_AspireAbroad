@@ -35,6 +35,9 @@ import Countries from './components/Countries'
 import Assistance from './Pages/Assisstance'
 import ExamPreparation from './Pages/ExamPreparation'
 import ChatApp from './Pages/chatApp'
+
+import Admin from './Pages/Admin'
+import AdminDashboard from './Pages/AdminDashboard'
 // import { TouristCanada } from '../../Backend/models/Austourist'
 
 function App() {
@@ -78,6 +81,8 @@ function App() {
       <Route path="/enroll" element={<Enroll/>}/>
       <Route path="/stepIn" element={<Login/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/admin' element={<Admin/>}/>
+      <Route path='/adminDashboard' element={<AdminDashboard/>}/>
     </Routes> 
     </> 
   )

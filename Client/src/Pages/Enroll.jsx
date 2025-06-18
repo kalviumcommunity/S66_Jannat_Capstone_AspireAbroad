@@ -72,7 +72,7 @@ const Enroll = () => {
         }
 
         try {
-            const response = await fetch('https://jannat-aspireabroad.onrender.com/enroll', {
+            const response = await fetch('http://localhost:0710/enroll', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
