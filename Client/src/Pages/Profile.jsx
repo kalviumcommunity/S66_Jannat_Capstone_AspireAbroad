@@ -14,7 +14,7 @@ function Profile() {
   const [userId, setUserId] = useState(null);
   const [userDetails, setUserDetails] = useState(null);
   const [activeTab, setActiveTab] = useState('all');
-  const [editing, setEditing] = useState({}); // { docId: { docName: base64 }}
+  const [editing, setEditing] = useState({}); 
 
   useEffect(() => {
     const storedUserId = localStorage.getItem('userID');
@@ -30,7 +30,7 @@ function Profile() {
     const token = localStorage.getItem('Token');
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:0710/user-documents/${id}`, {
+      const res = await fetch(`https://jannat-aspireabroad.onrender.com/user-documents/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -87,7 +87,7 @@ function Profile() {
     if (!base64) return alert('Please select a file.');
 
     try {
-      const res = await fetch(`http://localhost:0710/update-documents/${docId}`, {
+      const res = await fetch(`https://jannat-aspireabroad.onrender.com/update-documents/${docId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ function Profile() {
       const data = await res.json();
       if (res.ok) {
         alert('Document updated successfully');
-        fetchDocuments(userId); // refresh
+        fetchDocuments(userId); 
         setEditing((prev) => ({ ...prev, [docId]: { ...prev[docId], [docName]: null } }));
       } else {
         alert(data?.error || 'Update failed');
@@ -126,7 +126,7 @@ function Profile() {
           <MainNav />
 
           <div className="w-full p-8 text-[#003366] font-sans min-h-screen mt-20">
-            {/* USER INFO */}
+   
             {userDetails && (
               <section className="w-full mx-auto bg-white rounded-xl shadow-lg flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-10 p-10 border-2 border-[#B52721] mb-10">
                 <div className="flex-shrink-0">

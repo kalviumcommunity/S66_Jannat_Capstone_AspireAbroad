@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:0710/admin', {
+      const response = await fetch('https://jannat-aspireabroad.onrender.com/admin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -44,9 +44,7 @@ const AdminDashboard = () => {
       <h2 className="text-4xl font-extrabold text-[#003366] mb-2 md:text-5xl">
         Hi Jannat! Welcome to your secure dashboard.
       </h2>
-      {/* <p className="text-lg text-gray-600 mb-10 max-w-2xl  leading-relaxed md:text-xl ">
-        Your insights drive our progress. Let's get to work!
-      </p> */}
+ 
 
       <div className="bg-white p-8 rounded-lg shadow-xl flex flex-col items-center w-full max-w-md ml-90 mt-9">
         <p className="text-lg text-gray-700 mb-4">Please enter your password to continue:</p>

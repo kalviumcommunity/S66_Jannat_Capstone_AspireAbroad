@@ -10,7 +10,7 @@ const Documents = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const { id: visaTypeParam } = useParams(); // e.g., /documents/Work
+  const { id: visaTypeParam } = useParams(); 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ user: '', visaType: '' });
   const [fileInputs, setFileInputs] = useState({});
@@ -41,10 +41,7 @@ const Documents = () => {
     setFileInputs(prev => ({ ...prev, [docType]: file }));
   };
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData(prev => ({ ...prev, [name]: value }));
-  // };
+  
 
  const handleSubmit = async (e) => {
   e.preventDefault();
@@ -73,7 +70,7 @@ const Documents = () => {
 
   try {
     const token = localStorage.getItem('Token');
-    const res = await fetch('http://localhost:0710/upload-documents', {
+    const res = await fetch('https://jannat-aspireabroad.onrender.com/upload-documents', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

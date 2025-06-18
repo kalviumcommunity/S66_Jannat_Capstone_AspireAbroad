@@ -10,10 +10,10 @@ const Dashboard = () => {
     }, []);
 
     const navigate = useNavigate();
-    const [userDetail, setUserDetails] = useState(null); // Initialize as null to handle loading state better
+    const [userDetail, setUserDetails] = useState(null);
     const [appointment, setAppointment] = useState([]);
-    const [loading, setLoading] = useState(true); // New loading state
-    const [error, setError] = useState(null); // New error state
+    const [loading, setLoading] = useState(true); 
+    const [error, setError] = useState(null); 
 
     const id = localStorage.getItem('userID');
     const token = localStorage.getItem('Token');
@@ -22,14 +22,14 @@ const Dashboard = () => {
         setLoading(true);
         setError(null);
         try {
-            const res = await fetch(`http://localhost:0710/getUser/${id}`, {
+            const res = await fetch(`https://jannat-aspireabroad.onrender.com/getUser/${id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }
             });
 
             if (!res.ok) {
-                // If response is not OK, try to read error message from body
+        
                 const errorData = await res.json();
                 throw new Error(errorData.message || `HTTP error! Status: ${res.status}`);
             }
@@ -72,16 +72,16 @@ const Dashboard = () => {
         } else {
             setLoading(false);
             setError("User ID or Token not found. Please log in.");
-            navigate('/login'); // Redirect to login if not authenticated
+            navigate('/login'); 
         }
-    }, [id, token, navigate]); // Add navigate to dependency array
+    }, [id, token, navigate]); 
 
     const userSteps = userDetail?.steps || [];
     const completedStepsCount = userSteps.filter(step => step.completed).length;
     const totalStepsCount = userSteps.length;
     const progressPercentage = totalStepsCount > 0 ? Math.round((completedStepsCount / totalStepsCount) * 100) : 0;
 
-    // Determine the current active step for the progress bar text
+ 
     const firstPendingStep = userSteps.find(step => !step.completed);
     const currentStatusText = firstPendingStep ? firstPendingStep.title : 'All steps completed!';
 
@@ -107,7 +107,7 @@ const Dashboard = () => {
         );
     }
 
-    // Ensure userDetail exists before rendering the rest
+
     if (!userDetail) {
         return (
             <div className="flex justify-center items-center min-h-screen bg-gray-100">
