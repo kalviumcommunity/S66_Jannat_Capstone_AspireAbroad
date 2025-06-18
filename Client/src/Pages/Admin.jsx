@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 
 
-// --- Admin Component ---
+
 const Admin = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ const Admin = () => {
         const fetchUsers = async () => {
             try {
          
-                const response = await fetch('http://localhost:0710/user'); 
+                const response = await fetch('https://jannat-aspireabroad.onrender.com/user'); 
                 if (!response.ok) {
                     throw new Error('Failed to fetch users');
                 }
@@ -37,7 +37,7 @@ const Admin = () => {
 
         setUpdatingApptId(appointmentId);
         try {
-            const response = await fetch(`http://localhost:0710/appointment/${appointmentId}`, { 
+            const response = await fetch(`https://jannat-aspireabroad.onrender.com/appointment/${appointmentId}`, { 
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: newStatus }),
@@ -78,7 +78,7 @@ const Admin = () => {
 
         try {
 
-            const response = await fetch(`http://localhost:0710/users/${userId}/steps`, {
+            const response = await fetch(`https://jannat-aspireabroad.onrender.com/users/${userId}/steps`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
