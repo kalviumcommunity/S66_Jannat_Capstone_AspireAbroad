@@ -50,18 +50,16 @@ const Footer = () => {
           <div className="w-full md:w-1/4">
             <h2 className="text-lg font-semibold">Follow Us</h2>
             <div className="mt-4 flex space-x-4">
-              <a href="#">
+              <a href="https://www.linkedin.com/in/jannat-0a457a328/">
                 <FaLinkedin className="text-4xl text-black" />
               </a>
-              <a href="#" >
+              <a href="https://github.com/Jannat150" >
                 <FaGithub className="text-4xl text-black"  />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/its_jannat_26/">
                 <FaSquareInstagram className="text-4xl text-black" />
               </a>
-              <a href="#" >
-                <FaSquareXTwitter className="text-4xl text-black"/>
-              </a>
+              
             </div>
           </div>
         </div>
