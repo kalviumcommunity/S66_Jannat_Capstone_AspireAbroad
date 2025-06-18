@@ -46,7 +46,7 @@ const CountryNav = ({ name }) => {
     
         <div className='flex items-center'>
           {countryImage ? (
-            <img src={countryImage.src} alt={countryImage.country} width={80} height={80} />
+            <img src={countryImage.src} alt={countryImage.country} width={80} height={80} onClick={()=>navigate(`/visas/${countryImage.country}`)} />
           ) : (
             <h1>Country not found</h1>
           )}
