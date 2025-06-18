@@ -119,7 +119,7 @@ const Admin = () => {
     };
 
 
-    if (loading) return <div className="flex justify-center items-center h-40">
+    if (loading) return <div className="flex justify-center items-center h-40 mt-96 mr-50">
     <div className="big-arc-plane text-6xl">✈️</div>
   </div>;
     if (error) return <div className="text-center text-red-700 p-8 text-xl font-semibold">Error: {error}</div>;
