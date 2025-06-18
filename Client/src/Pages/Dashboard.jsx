@@ -47,7 +47,7 @@ const Dashboard = () => {
 
     const fetchAppointments = async () => {
         try {
-            const response = await fetch(`http://localhost:0710/appointment/${id}`, {
+            const response = await fetch(`https://jannat-aspireabroad.onrender.com/appointment/${id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }
