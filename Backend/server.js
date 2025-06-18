@@ -38,7 +38,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://effulgent-lebkuchen-ac0277.netlify.app",
+    "https://jannat-aspireabroad.netlify.app",
     "https://resonant-kangaroo-7b36ee.netlify.app"
   ],
   credentials: true
@@ -164,7 +164,7 @@ const io = new Server(server, {
   cors: {
     origin: [
       "http://localhost:5173",
-      "https://effulgent-lebkuchen-ac0277.netlify.app",
+      "https://jannat-aspireabroad.netlify.app",
       "https://resonant-kangaroo-7b36ee.netlify.app"
     ],
     methods: ["GET", "POST"],
