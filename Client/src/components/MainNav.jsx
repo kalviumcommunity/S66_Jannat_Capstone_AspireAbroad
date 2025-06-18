@@ -86,6 +86,9 @@ const MainNav = () => {
               <button className='bg-[#B52721] p-2 w-20 h-11 text-white rounded-2xl ml-3 mr-1 cursor-pointer font-semibold'>
                 <Link to='/stepIn'>Step In</Link>
               </button>
+              <button className='bg-yellow-600 p-2 w-24 h-11 text-white rounded-2xl ml-2 mr-2 cursor-pointer font-semibold'>
+      <Link to='/adminDashboard'>Admin</Link>
+    </button>
             </>
           )}
         </div>

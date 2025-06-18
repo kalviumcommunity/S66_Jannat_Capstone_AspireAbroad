@@ -6,12 +6,15 @@ import globe from "../assets/Globe.webp";
 
 const VisaBlog = () => {
    const [data, setData] = useState([]);
+   const [loading,setLoading]=useState(true)
 
    const fetchData = async () => {
+    setLoading(true)
     const request = await fetch("https://jannat-aspireabroad.onrender.com/blog");
     const response = await request.json();
     if (response) {
         console.log(response);
+        setLoading(false)
         setData(response);
     }
    };
@@ -41,7 +44,9 @@ const VisaBlog = () => {
           </div>
 
           <div className="container mx-auto px-6 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {loading?(<div className="flex justify-center items-center h-40">
+    <div className="big-arc-plane text-6xl">✈️</div>
+  </div>):(<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {data.map((i, idx) => (
                 <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                   <img 
@@ -63,7 +68,8 @@ const VisaBlog = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div>)}
+            
           </div>
 
           <Footer />

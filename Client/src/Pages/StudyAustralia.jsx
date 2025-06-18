@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import CountryNav from '../components/CountryNav'; // Fixed typo in the import path
+import CountryNav from '../components/CountryNav'; 
 import { useParams,useNavigate } from 'react-router-dom';
-import Ausbac from '../assets/AustraliaBackground.webp'; // Make sure to import the background image
+import Ausbac from '../assets/AustraliaBackground.webp'; 
 import Footer from '../components/Footer';
 
 const StudyAustralia = () => {
@@ -15,7 +15,7 @@ const StudyAustralia = () => {
 
   const handleLevelChange = (event) => {
     const { value } = event.target;
-    setSelectedLevel(value);  // Set the selected level
+    setSelectedLevel(value);  
   };
   const visaPage=(country)=>{
     navigate(`/${country}/visa-application`)
@@ -28,7 +28,7 @@ const StudyAustralia = () => {
       setColleges([]);
 
       try {
-        const response = await fetch('https://jannat-aspireabroad.onrender.com/college?country=Australia');
+        const response = await fetch('http://localhost:0710/college?country=Australia');
         const data = await response.json();
 
         if (response.ok) {
@@ -112,9 +112,9 @@ const StudyAustralia = () => {
 
 
           {loading && (
-            <div className="flex justify-center items-center opacity-80">
-              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#003366] border-solid transition-all duration-500 ease-in-out"></div>
-            </div>
+            <div className="flex justify-center items-center h-40">
+    <div className="big-arc-plane text-6xl">✈️</div>
+  </div>
           )}
 
           {error && <p className="text-[#B52721] text-center">{error}</p>}
@@ -149,9 +149,11 @@ const StudyAustralia = () => {
                     <p className="text-gray-600">
                       <strong>Entry Requirements:</strong> {college.entry}
                     </p>
-                    <button className="mt-4 w-full bg-[#B52721] text-white py-2 px-4 rounded-md  hover:bg-red-700 transition duration-300 ease-in-out cursor-pointer ">
-                      View Details
-                    </button>
+                    <button
+  className="mt-4 w-full bg-[#B52721] text-white py-2 px-4 rounded-md hover:bg-red-700 transition duration-300 ease-in-out cursor-pointer"
+>
+  View Details
+</button>
                   </div>
                 </div>
               ))

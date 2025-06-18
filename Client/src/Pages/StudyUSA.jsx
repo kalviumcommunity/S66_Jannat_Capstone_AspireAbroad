@@ -113,9 +113,9 @@ const StudyUSA = () => {
 
          
           {loading && (
-            <div className="flex justify-center items-center opacity-80">
-              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#003366] border-solid transition-all duration-500 ease-in-out"></div>
-            </div>
+           <div className="flex justify-center items-center h-40">
+    <div className="big-arc-plane text-6xl">✈️</div>
+  </div>
           )}
 
           {error && <p className="text-[#B52721] text-center">{error}</p>}

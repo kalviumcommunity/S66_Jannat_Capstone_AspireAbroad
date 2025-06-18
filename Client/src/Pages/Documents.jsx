@@ -15,6 +15,8 @@ const Documents = () => {
   const [formData, setFormData] = useState({ user: '', visaType: '' });
   const [fileInputs, setFileInputs] = useState({});
   const [requiredDocs, setRequiredDocs] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
+
 
   const visaDocuments = {
     Tourist: ['Passport', 'ApplicationForm', 'Photograph', 'FrequentTravelProof', 'FinancialStabilityProof', 'AccommodationTravelDetails', 'PurposeOfVisitLetter'],
@@ -44,41 +46,56 @@ const Documents = () => {
   //   setFormData(prev => ({ ...prev, [name]: value }));
   // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const data = new FormData();
-    console.log("data",data)
-    data.append('user', formData.user);
-    data.append('visaType', formData.visaType);
+  const filesAsBase64 = {};
+  const convertToBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
 
-    for (let doc in fileInputs) {
-      if (fileInputs[doc]) data.append(doc, fileInputs[doc]);
+  for (let doc in fileInputs) {
+    const file = fileInputs[doc];
+    if (file) {
+      filesAsBase64[doc] = await convertToBase64(file);
     }
+  }
 
-    try {
-      const token=localStorage.getItem('Token')
-      const res = await fetch('https://jannat-aspireabroad.onrender.com/upload-documents', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`
-        },
-        body: data
-      });
-      console.log('response', res)
-      const result = await res.json();
-      console.log("res",result)
-      if (res.ok) {
-        toast.success('Documents uploaded successfully!');
-        setTimeout(() => navigate('/profile'), 2000);
-      } else {
-        toast.error(result.message || 'Upload failed.');
-      }
-    } catch (err) {
-      console.error(err);
-      toast.error('Something went wrong. Try again.');
-    }
+  const payload = {
+    user: formData.user,
+    visaType: formData.visaType,
+    files: filesAsBase64,
   };
+
+  try {
+    const token = localStorage.getItem('Token');
+    const res = await fetch('http://localhost:0710/upload-documents', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await res.json();
+    if (res.ok) {
+      toast.success('Documents uploaded successfully!');
+      setSubmitted(true);
+      setTimeout(() => navigate('/profile'), 2000);
+    } else {
+      toast.error(result.message || 'Upload failed.');
+    }
+  } catch (err) {
+    console.error(err);
+    toast.error('Something went wrong. Try again.');
+  }
+};
+
 
   return (
     <>
@@ -101,36 +118,41 @@ const Documents = () => {
               {visaTypeParam} Visa Document Submission
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            {submitted ? (
+  <div className="text-center text-2xl font-semibold text-green-700 py-12">
+    ✅ Documents have been submitted successfully!
+  </div>
+) : (
+  <form onSubmit={handleSubmit} className="space-y-6">
+    <input type="hidden" name="visaType" value={formData.visaType} />
 
-              <input type="hidden" name="visaType" value={formData.visaType} />
+    {requiredDocs.map((doc, index) => (
+      <div key={index}>
+        <label htmlFor={doc} className="block text-lg font-medium text-[#003366] mb-2">
+          {doc.replace(/([A-Z])/g, ' $1').trim()}
+        </label>
+        <input
+          type="file"
+          name={doc}
+          id={doc}
+          onChange={(e) => handleFileChange(e, doc)}
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#003366]"
+          required
+        />
+      </div>
+    ))}
 
-              {requiredDocs.map((doc, index) => (
-                <div key={index}>
-                  <label htmlFor={doc} className="block text-lg font-medium text-[#003366] mb-2">
-                    {doc.replace(/([A-Z])/g, ' $1').trim()}
-                  </label>
-                  <input
-                    type="file"
-                    name={doc}
-                    id={doc}
-                    onChange={(e) => handleFileChange(e, doc)}
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#003366]"
-                    required
-                  />
-                </div>
-              ))}
+    <div className="flex justify-center">
+      <button
+        type="submit"
+        className="bg-[#003366] text-white px-8 py-3 rounded-md hover:bg-[#B52721] transition-all cursor-pointer"
+      >
+        Submit Documents
+      </button>
+    </div>
+  </form>
+)}
 
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="bg-[#003366] text-white px-8 py-3 rounded-md hover:bg-[#B52721] transition-all cursor-pointer"
-                  
-                >
-                  Submit Documents
-                </button>
-              </div>
-            </form>
           </div>
         </div>
 

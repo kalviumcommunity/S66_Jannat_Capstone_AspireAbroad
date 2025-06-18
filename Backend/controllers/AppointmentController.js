@@ -46,5 +46,39 @@ const getAppointmentsByUserId = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+const updateAppointmentStatus = async (req, res) => {
+    try {
+        const { id } = req.params; // Or appointmentId, based on your route
+        console.log("Attempting to update appointment with ID:", id); // Add this for clarity
 
-module.exports={createAppointment,getAppointmentsByUserId}
+        const { status } = req.body;
+
+        const validStatuses = ['pending', 'confirmed', 'completed', 'cancelled'];
+        if (!validStatuses.includes(status)) {
+            return res.status(400).json({ message: 'Invalid status provided.' });
+        }
+
+        const appointment = await Appointment.findById(id); // THIS IS THE MOST LIKELY SPOT FOR A CASTERROR
+
+        if (!appointment) {
+            return res.status(404).json({ message: 'Appointment not found.' });
+        }
+
+        appointment.status = status;
+        appointment.updatedAt = Date.now();
+
+        await appointment.save();
+
+        res.status(200).json({
+            message: 'Appointment status updated successfully',
+            appointment
+        });
+
+    } catch (error) {
+        // ⭐⭐⭐ IMPORTANT: Log the error here to see the details ⭐⭐⭐
+        console.error("Server Error in updateAppointmentStatus:", error);
+        res.status(500).json({ message: error.message || 'An unknown server error occurred' });
+    }
+};
+
+module.exports={createAppointment,getAppointmentsByUserId,updateAppointmentStatus}
