@@ -87,7 +87,7 @@ const Dashboard = () => {
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center h-40">
+            <div className="flex justify-center items-center h-40 mt-96 mr-20">
     <div className="big-arc-plane text-6xl">✈️</div>
   </div>
         );
