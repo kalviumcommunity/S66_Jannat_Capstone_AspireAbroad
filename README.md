@@ -48,5 +48,5 @@ The platform will serve as a one-stop solution for users seeking guidance on dif
 https://jannat-aspireabroad.onrender.com
 
 ### Frontend Deployed Link:-
-https://resonant-kangaroo-7b36ee.netlify.app
+[https://resonant-kangaroo-7b36ee.netlify.app](https://jannat-aspireabroad.netlify.app/)
 
