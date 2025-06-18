@@ -35,7 +35,7 @@ import Countries from './components/Countries'
 import Assistance from './Pages/Assisstance'
 import ExamPreparation from './Pages/ExamPreparation'
 import ChatApp from './Pages/chatApp'
-import UpdateDocuments from './Pages/UpdateDocuments'
+
 import Admin from './Pages/Admin'
 import AdminDashboard from './Pages/AdminDashboard'
 // import { TouristCanada } from '../../Backend/models/Austourist'
