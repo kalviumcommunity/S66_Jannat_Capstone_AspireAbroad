@@ -190,7 +190,7 @@ server.listen(PORT, async () => {
   try {
     await mongoose.connect(MongoURL);
     console.log("✅ Connected to MongoDB Database");
-    console.log(cloud_name);  // should print your actual cloud name
+
 
   } catch (error) {
     console.error("MongoDB Connection Error:", error);
