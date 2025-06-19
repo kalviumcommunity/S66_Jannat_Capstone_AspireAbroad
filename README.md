@@ -5,11 +5,17 @@ AspireAbroad is a comprehensive, user-centric platform designed to simplify the 
 The platform will serve as a one-stop solution for users seeking guidance on different visa types, such as **tourist**, **work**, **study**, and **permanent residency** visas. By offering a blend of detailed information, personalized support, and step-by-step application assistance, AspireAbroad will increase the likelihood of successful visa approval while saving users time and money.
 
 ### Key Features of **AspireAbroad**:
-- **Comprehensive Visa Information**: Provides detailed requirements and procedures for various visa types.
-- **Visa Application Assistance**: Step-by-step guidance and document checklists to simplify the application process.
-- **Personalized Guidance**: Tailored visa recommendations based on user profile and eligibility.
-- **Study Visa Support**: Matches students with suitable universities and provides study visa assistance.
-- **User Dashboard**: Tracks application progress, stores documents, and sends real-time notifications.
+* **Comprehensive Visa Information**: Clear, updated guidance on tourist, study, work, and PR visas for countries like the USA, UK, Canada, and Australia.
+* **Step-by-Step Visa Assistance**: Guided application process with document checklists, expert tips, and interview preparation.
+* **Real-Time Support**: 24/7 live chat to help users overcome doubts and application hurdles.
+* **Personalized Recommendations**: Custom suggestions for visas, universities, and accommodation based on user profiles.
+* **Study Visa & Exam Support**: Assistance with study visa applications and resources for IELTS, TOEFL, and PTE preparation.
+* **Appointment Booking System**: Book visa interviews, expert consultations, and embassy meetings in one place.
+* **Immigration News & Alerts**: Real-time updates on immigration policies and visa rule changes.
+* **PR Eligibility Tracker**: Helps users assess and plan their permanent residency pathway.
+* **University & Visa Requirements**: Detailed academic and visa information for institutions worldwide.
+* **Dual Portal System**: Separate dashboards for users and admins to manage applications and data efficiently.
+* **Real-Time Visa Tracking**: Live updates on visa application status from submission to approval.
 
 ## Teck Stack
 ### Frontend:
