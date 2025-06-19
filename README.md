@@ -4,7 +4,7 @@ AspireAbroad is a comprehensive, user-centric platform designed to simplify the 
 
 The platform will serve as a one-stop solution for users seeking guidance on different visa types, such as **tourist**, **work**, **study**, and **permanent residency** visas. By offering a blend of detailed information, personalized support, and step-by-step application assistance, AspireAbroad will increase the likelihood of successful visa approval while saving users time and money.
 
-### Key Features of **AspireAbroad**:
+## Key Features of **AspireAbroad**:
 * **Comprehensive Visa Information**: Clear, updated guidance on tourist, study, work, and PR visas for countries like the USA, UK, Canada, and Australia.
 * **Step-by-Step Visa Assistance**: Guided application process with document checklists, expert tips, and interview preparation.
 * **Real-Time Support**: 24/7 live chat to help users overcome doubts and application hurdles.
@@ -34,7 +34,7 @@ The platform will serve as a one-stop solution for users seeking guidance on dif
 ### Deployment:
 - Render / Netlify: Render for backend hosting and Netlify for fast frontend deployment with CI/CD support.
 
-### Day-by-Day Plan:-
+## Day-by-Day Plan:-
 - *Day1 :-* Set Up Project Repository
 - *Day2:-* Low Fidelity Design
 - *Day3:-* Backend Setup (Express and GET API)
@@ -48,9 +48,9 @@ The platform will serve as a one-stop solution for users seeking guidance on dif
 - *Day11:-* Final Deployment
 - *Day12:-* Documentation and Final Presentation
 
-### Backend Deployed Link:-
+## Backend Deployed Link:-
 https://jannat-aspireabroad.onrender.com
 
-### Frontend Deployed Link:-
+## Frontend Deployed Link:-
 https://jannat-aspireabroad.netlify.app
 
