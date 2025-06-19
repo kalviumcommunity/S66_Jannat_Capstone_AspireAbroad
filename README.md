@@ -30,11 +30,9 @@ The platform will serve as a one-stop solution for users seeking guidance on dif
 
 ### Authentication:
 - **JWT** (JSON Web Tokens): For secure, token-based user authentication. It enables the creation of stateless, secure sessions for users.
-- **OAuth2**: For integrating third-party authentication systems like Google, Facebook, etc.
 
 ### Deployment:
-
-- **Heroku / Vercel**: Platforms for deploying the frontend and backend. These platforms are easy to use and support continuous integration and deployment.
+- Render / Netlify: Render for backend hosting and Netlify for fast frontend deployment with CI/CD support.
 
 ### Day-by-Day Plan:-
 - *Day1 :-* Set Up Project Repository
